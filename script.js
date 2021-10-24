@@ -18,7 +18,6 @@
 'use strict';
 
 
-
 const  numberOfFilms = prompt("сколько фильмов вы уже посмотрели?","");
 
 console.log(numberOfFilms);
@@ -29,15 +28,16 @@ const personalMovieDB = {
     genres : [],
     privat : false 
 };
-let namesOfFilms=[];
-let rateOfFilms=[]; 
-for (let i =0;i<2;i++) {
-    do {      
-        namesOfFilms[i] =  prompt("Один из последних просмотренных фильмов?", '');
-}
-    while (namesOfFilms[i]===null||namesOfFilms[i]=='' || namesOfFilms[i].length>50 );
-    rateOfFilms[i] =  prompt("На сколько оцените его?","");
-    personalMovieDB.movies[namesOfFilms[i]] = rateOfFilms[i];
+
+for (let i =0;i<2;i++) {     
+    const a = prompt("Один из последних просмотренных фильмов?", '');
+    const b = prompt("На сколько оцените его?","");
+    if (a!= null && b!=null && a!='' && b!=null && a.length<50) {
+        personalMovieDB.movies[a] = b;
+    }
+    else {
+        i--;
+    }
     }
 //const a = prompt("Один из последних просмотренных фильмов?", '');
 //const b = prompt("На сколько оцените его?","");
