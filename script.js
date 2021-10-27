@@ -11,20 +11,19 @@
 при помощи метода forEach вывести в консоль сообщения в таком виде:
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
-let  numberOfFilms;
 
 
 
 const personalMovieDB = {
-    count : numberOfFilms,
+    count : 0,
     movies : {} ,
     actors : {} ,
     genres : [],
     privat : false ,
     start: function start(){
-        numberOfFilms = +prompt("сколько фильмов вы уже посмотрели?","");
-        while(numberOfFilms =='' ||numberOfFilms ==null ||isNaN(numberOfFilms)){
-            numberOfFilms = +prompt("сколько фильмов вы уже посмотрели?","");
+        personalMovieDB.count = +prompt("сколько фильмов вы уже посмотрели?","");
+        while(personalMovieDB.count =='' ||personalMovieDB.count ==null ||isNaN(personalMovieDB.count)){
+            personalMovieDB.count = +prompt("сколько фильмов вы уже посмотрели?","");
         }
         
     },
